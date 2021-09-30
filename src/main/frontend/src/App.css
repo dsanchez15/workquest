@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.table-hover tbody tr:hover {
+  color: yellow !important;
+  background-color: brown;
+}
+
+.custom-btn {
+  background-color: blueviolet !important;
+  border: #fff !important;
+}

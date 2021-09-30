@@ -1,63 +1,22 @@
-import React, { useState, useEffect } from "react"
-import './App.css';
+import React from "react"
 
-import Table from './components/Table/Table.js'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar, Container } from 'react-bootstrap';
 
-function useGetAllQuestions() {
-  const [questions, setQuestions] = useState([]);
-  const getQuestions = () => {
-    fetch('http://localhost:8080/')
-      .then(response => response.json())
-      .then(data => {
-        setQuestions(data);
-      });
-  }
-
-  useEffect(() => {
-    getQuestions();
-  }, []);
-
-  return { questions }
-}
-
-
-
-
-
-
-/*const Questions = () => {
-
-  const [questions, setQuestions] = useState([]);
-
-  const fetchQuestions = () => {
-    fetch('http://localhost:8080/')
-      .then(response => response.json())
-      .then(data => {
-        setQuestions(data);
-      });
-  }
-
-  useEffect(() => {
-    fetchQuestions();
-  }, []);
-
-  return questions.map((question, index) => {
-    return (
-      <div key={index}>
-        <h1>{question.question}</h1>
-        <p>{question.answer}</p>
-      </div>
-    );
-  });
-
-return questions
-};*/
+//import ButtonModalComponent from './components/ButtonModalComponent';
+import Questions from "./pages/Questions";
 
 function App() {
+
   return (
-    <div className="App">
-      <Table rows={useGetAllQuestions()} />
-    </div>
+    <>
+      <Navbar bg="light">
+        <Container>
+          <Navbar.Brand>Navbar</Navbar.Brand>
+        </Container>
+      </Navbar>
+      <Questions />
+    </>
   );
 }
 
