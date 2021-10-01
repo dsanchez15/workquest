@@ -1,0 +1,110 @@
+{/*<div className="App">
+       <Navbar bg="light">
+        <Container>
+          <Navbar.Brand>Brand text</Navbar.Brand>
+        </Container>
+      </Navbar> */}
+{/* <TableComponent rows={useGetAllQuestions()} cols={cols}/> 
+      <Container fluid>
+        <Row>
+          <Col xs={2} id="sidebar-wrapper">
+            <Side />
+          </Col>
+          <Col xs={10} id="page-content-wrapper">
+            this is a test
+          </Col>
+        </Row>
+
+      </Container>
+      <DataTable
+        columns={columnas}
+        data={dataTable}
+        title="Ejemplo"
+      />
+    </div>*/}
+
+
+
+
+
+
+
+/*const Questions = () => {
+
+  const [questions, setQuestions] = useState([]);
+
+  const fetchQuestions = () => {
+    fetch('http://localhost:8080/')
+      .then(response => response.json())
+      .then(data => {
+        setQuestions(data);
+      });
+  }
+
+  useEffect(() => {
+    fetchQuestions();
+  }, []);
+
+  return questions.map((question, index) => {
+    return (
+      <div key={index}>
+        <h1>{question.question}</h1>
+        <p>{question.answer}</p>
+      </div>
+    );
+  });
+
+return questions
+};*/
+
+const cols = [{ "id": 1, "name": "Columna1 " },
+{ "id": 2, "name": "Columna2 " },
+{ "id": 3, "name": "Columna3 " },
+{ "id": 4, "name": "Columna4 " }];
+
+const dataTable = [
+    { id: 1, question: "Que es java", answer: "Un lenguaje de programacion" },
+    { id: 2, question: "Que es un map en Java", answer: "Es una estructura de datos de tipo clave valor." },
+    { id: 3, question: "Una caudal del siguiente error en Git: src refspec main does not match any", answer: "Puede ser porque se esta intentando hacer push de una rama nueva que no tiene commits. Utilizar primero git status apra verificar si hay commits a subir." },
+    { id: 4, question: "Que es", answer: "Un lenguaje", action: <Button className="custom-btn"> Boton < /Button> }
+];
+
+const columnas = [
+    { name: 'Id', selector: 'id', sortable: true },
+    { name: 'Question', selector: 'question', sortable: true },
+    { name: 'Answer', selector: 'answer', sortable: true },
+    { name: 'Actions', selector: 'action' }
+];
+
+function useGetAllQuestions() {
+    const [questions, setQuestions] = useState([]);
+    const getQuestions = () => {
+        let data = [{ "id": 1, "question": "Que es java", "answer": "Un lenguaje de programacion" }, { "id": 2, "question": "Que es un map en Java", "answer": "Es una estructura de datos de tipo clave valor." }, { "id": 3, "question": "Una caudal del siguiente error en Git: src refspec main does not match any", "answer": "Puede ser porque se esta intentando hacer push de una rama nueva que no tiene commits. Utilizar primero git status apra verificar si hay commits a subir." },
+        { "id": 4, "question": "Que es", "answer": "Un lenguaje " }];
+        setQuestions(data);
+        /*fetch('http://localhost:8080/')
+          .then(response => response.json())
+          .then(data => {
+            setQuestions(data);
+          });*/
+    }
+
+    useEffect(() => {
+        getQuestions();
+    }, []);
+
+    return { questions }
+}
+
+import './App.css';
+
+import TableComponent from './components/Table/TableComponent.js'
+import Side from './components/Side/Side.js'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import DataTable from "react-data-table-component";
+import { Navbar, Container, Brand, Button, Row, Col } from 'react-bootstrap';
+
+
+<ButtonModalComponent />
+    < ButtonModalComponent nameButton = "Button2" />

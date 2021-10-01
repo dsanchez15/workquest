@@ -4,7 +4,7 @@ import DataTable from "react-data-table-component";
 import { Button } from 'react-bootstrap';
 
 import { columnsQuestions, questions } from "../data/data";
-import ButtonModalComponent from "../components/ButtonModalComponent";
+import ButtonModalComponent from "./ButtonModalComponent";
 import FormNewQuestion from "./FormNewQuestion";
 
 const Questions = () => {
